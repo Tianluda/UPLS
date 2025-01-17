@@ -5,9 +5,9 @@
 # Introduction
 In modern agriculture, leaf disease segmentation is crucial for crop disease management and yield improvement. As most deep learning-based segmentation models require extensive annotations, it is feasible to resort to advanced models like the Segment Anything Model (SAM) can produce precise class-agnostic masks without annotations. However, their reliance on human-interactive prompts limits their utility to unsupervised spot segmentation tasks. To address this limitation, we propose *Unsupervised Prompt Learning via SAM for Leaf Disease Segmentation* (**UPLS**), a novel three-stage framework that leverages unsupervised contrastive learning to segment foreground regions of interest and automatically generates disease prompts for SAM. In the first two stages, UPLS sequentially segments the leaf and disease areas by distinguishing foreground and background features through unsupervised contrastive learning. Specifically, for small and intricate lesions, we additionally extract fine-grained information and high-frequency features based on the segmented leaf area, and devise contrastive losses between global priors and foreground/background features to generate precise initial lesion regions. In the final stage, positive and negative prompts are derived from the segmented leaf and initial lesion regions, respectively, enabling SAM to refine disease boundaries without human intervention. Experiments on the public leaf disease dataset show that UPLS outperforms existing non-fully supervised segmentation methods in accuracy and robustness.
 
-![](image/Figure_3.png)
-![](image/Figure_2_1.png)
-![](image/Figure_2_2.png)
+![](./image/Figure_3.png)
+![](./image/Figure_2_1.png)
+![](./image/Figure_2_2.png)
 
 # Preparation
 
@@ -21,8 +21,8 @@ cd UPLS
 ## 2. Prepare the data
 
 Download [the Apple Leaf Disease Dataset and the Extra test dataset](https://data.mendeley.com/datasets/tsfxgsp3z6/2) used in this paper. After downloading, place the datasets under the "./experiments/data" folder.
-![](image/Figure_1_1.png)
-![](image/Figure_1_2.png)
+![](./image/Figure_1_1.png)
+![](./image/Figure_1_2.png)
 
 ## 3. Environment setting
 
