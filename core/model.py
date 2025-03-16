@@ -524,24 +524,16 @@ class ResNetSeries(nn.Module):
         self.layer4 = model.layer4
         if 'True' in self.parameters:
             if 'Res' in self.parameters:
-                self.cbam1 = CBAM(256,ReduceDimensions='True',Res='True')
-                self.cbam2 = CBAM(512,ReduceDimensions='True',Res='True')
                 self.cbam3 = CBAM(1024,ReduceDimensions='True',Res='True')
                 self.cbam4 = CBAM(2048,ReduceDimensions='True',Res='True')
             else:
-                self.cbam1 = CBAM(256,ReduceDimensions='True')
-                self.cbam2 = CBAM(512,ReduceDimensions='True')
                 self.cbam3 = CBAM(1024,ReduceDimensions='True')
                 self.cbam4 = CBAM(2048,ReduceDimensions='True')
         if 'UP' in self.parameters:
             if 'Res' in self.parameters:
-                self.cbam1 = CBAM(256,ReduceDimensions='UP',Res='True')
-                self.cbam2 = CBAM(512,ReduceDimensions='UP',Res='True')
                 self.cbam3 = CBAM(1024,ReduceDimensions='UP',Res='True')
                 self.cbam4 = CBAM(2048,ReduceDimensions='UP',Res='True')
             else:
-                self.cbam1 = CBAM(256,ReduceDimensions='UP')
-                self.cbam2 = CBAM(512,ReduceDimensions='UP')
                 self.cbam3 = CBAM(1024,ReduceDimensions='UP')
                 self.cbam4 = CBAM(2048,ReduceDimensions='UP')
         if 'BS' in self.parameters:
